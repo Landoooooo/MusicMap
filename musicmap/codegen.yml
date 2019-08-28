@@ -1,5 +1,5 @@
 overwrite: true
-schema: "http://localhost:4000"
+schema: process.env.REACT_APP_DEV_URL
 generates:
   ./graphql.schema.json:
     plugins:

@@ -44,7 +44,7 @@ class Upload extends React.Component {
         const idToken = localStorage.getItem("token");
 
         const client = new ApolloClient({
-            uri: "http://localhost:4000",
+            uri: process.env.REACT_APP_DEV_URL,
             headers: {authorization: idToken}
 
         })
@@ -153,7 +153,7 @@ class Upload extends React.Component {
         console.log(state)
 
         const client = new ApolloClient({
-            uri: "http://localhost:4000"
+            uri: process.env.REACT_APP_DEV_URL
         })
 
         console.log(state)

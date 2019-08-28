@@ -54,7 +54,7 @@ class SignInOrSignUp extends React.Component{
     this.getCurrentUser(idToken)
 
     const client = new ApolloClient({
-      uri: "http://localhost:4000",
+      uri: process.env.REACT_APP_DEV_URL,
       headers: { authorization: idToken}
     });
 
@@ -75,7 +75,7 @@ class SignInOrSignUp extends React.Component{
 
     getCurrentUser = idToken => {
         const client = new ApolloClient({
-          uri: "http://localhost:4000",
+          uri: process.env.REACT_APP_DEV_URL,
           headers: { authorization: idToken }
         });
 
@@ -90,7 +90,7 @@ class SignInOrSignUp extends React.Component{
       };
     createUser = userObj => {
         const client = new ApolloClient({
-          uri: "http://localhost:4000"
+          uri: process.env.REACT_APP_DEV_URL
         });
 
         client

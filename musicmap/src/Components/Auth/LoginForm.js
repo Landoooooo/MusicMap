@@ -66,7 +66,7 @@ class LoginForm extends React.Component {
 
         console.log(profile_photo.type)
         const client = new ApolloClient({
-            uri: "http://localhost:4000"
+            uri: process.env.REACT_APP_DEV_URL
         })
 
         await client.mutate({

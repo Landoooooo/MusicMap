@@ -18,7 +18,7 @@ const fragmentMatcher = new IntrospectionFragmentMatcher({
 })
 
 const httpLink = createHttpLink({
-    uri: "http://localhost:4000"
+    uri: process.env.REACT_APP_DEV_URL
 });
 
 const cache = new InMemoryCache({

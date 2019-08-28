@@ -102,7 +102,7 @@ const StatusCard = props => {
 
 const getUsername = async (id, setUsername) => {
     const client = new ApolloClient({
-        uri: "http://localhost:4000"
+        uri: process.env.REACT_APP_DEV_URL
     })
 
    await client.query({
@@ -117,7 +117,7 @@ const pinUser = async (feed_id, user_id, username) => {
     const pin = {feed_id, user_id: user_id, username: username}
 
     const client = new ApolloClient({
-        uri: "http://localhost:4000"
+        uri: process.env.REACT_APP_DEV_URL
     })
 
     await client.mutate({

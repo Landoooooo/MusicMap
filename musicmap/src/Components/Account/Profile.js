@@ -114,7 +114,7 @@ const Profile = props => {
 const getUser = async (user, setUserInfo, setUserPost) => {
     console.log(user)
     const client = new ApolloClient({
-        uri: "http://localhost:4000"
+        uri: process.env.REACT_APP_DEV_URL
     })
 
     await client.query({
@@ -135,7 +135,7 @@ const getStatus = (userInfo, setUserPost) => {
     const idToken = localStorage.getItem("token");
 
     const client = new ApolloClient({
-        uri: "http://localhost:4000",
+        uri: process.env.REACT_APP_DEV_URL,
         headers: {authorization: idToken}
     })
 
@@ -153,7 +153,7 @@ const pinUser = async (current, user_id, username) => {
     const pin = {feed_id: current, user_id: user_id, username: username}
 
     const client = new ApolloClient({
-        uri: "http://localhost:4000"
+        uri: process.env.REACT_APP_DEV_URL
     })
 
     await client.mutate({
@@ -168,7 +168,7 @@ const getCurrentUser = setCurrentUser => {
     const idToken = localStorage.getItem("token");
 
     const client = new ApolloClient({
-      uri: "http://localhost:4000",
+      uri: process.env.REACT_APP_DEV_URL,
       headers: {authorization: idToken}
     })
 
